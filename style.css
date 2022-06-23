@@ -1,0 +1,85 @@
+
+/**************** start main Rules  **************/
+* , *::before , *::after{
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+}
+/**************** End main Rules  **************/
+
+/**************** start Variables  **************/
+:root{
+    /*first choice project's colors */
+    --main-background-color: linear-gradient(to right, rgb(253, 158, 121) , rgb(237, 253, 132));
+    --main-buttons-background:  rgb(247, 249, 186);
+    --main-buttons-hover:  rgb(251, 252, 217);
+
+    /* alternative colors choice */
+    --alt-background-color: linear-gradient(to right, #00AAFF, #00FF6C);
+    --alt-buttons-background:  #a1fbc6;
+    --alt-buttons-hover: #d4fee6;
+}
+/**************** End Variables  **************/
+body{
+    padding: 0;
+    margin: 0;
+    background: var(--main-background-color);
+   /* background: var(--alt-background-color);*/
+
+    
+}
+
+
+.calc-grid{
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 25%;
+    height: 445px;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+   gap: 2px;
+   background-color: white;
+}
+.output{
+    grid-column: 1 / span 4;    /* so this element will start from coloumn #1  and will take 4 coloumns  */
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    
+
+}
+.output .previous-operand{
+    color: #ccc;
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: white;
+    font-size: 2.5rem;
+}
+
+.span-2{
+    grid-column: span 2; /*  so this element span to (expand to) two elements "it takes two elements"   */
+   
+}
+
+.calc-grid > button{
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+    background-color: var(--main-buttons-background);
+   /* background-color: var(--alt-buttons-background);*/
+  
+}
+.calc-grid > button:hover{
+   background-color: var(--main-buttons-hover);
+  /* background-color: var(--alt-buttons-hover);*/
+  
+}
