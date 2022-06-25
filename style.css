@@ -33,13 +33,13 @@ body{
     border: none;
     font-size: 1.2em;
     font-weight: bold;
-    width: 25%;
-    height: 445px;
-    margin: 100px auto;
+    width: 50vh;
+    height: 60vh;
+    margin: 10% auto; /*top right bottom left)*/
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-   gap: 2px;
-   background-color: white;
+    grid-template-columns: repeat(4, minmax(70px, 1fr));
+    gap: 2px;
+    background-color: white;
 }
 .output{
     grid-column: 1 / span 4;    /* so this element will start from coloumn #1  and will take 4 coloumns  */
