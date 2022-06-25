@@ -24,8 +24,6 @@ body{
     margin: 0;
     background: var(--main-background-color);
    /* background: var(--alt-background-color);*/
-
-    
 }
 
 
@@ -38,9 +36,9 @@ body{
     margin: 10% auto; /*top right bottom left)*/
     display: grid;
     grid-template-columns: repeat(4, minmax(70px, 1fr));
-    gap: 2px;
-    background-color: white;
 }
+
+
 .output{
     grid-column: 1 / span 4;    /* so this element will start from coloumn #1  and will take 4 coloumns  */
     display: flex;
@@ -52,9 +50,9 @@ body{
     padding: 10px;
     word-wrap: break-word;
     word-break: break-all;
-    
-
 }
+
+
 .output .previous-operand{
     color: #ccc;
     font-size: 1.5rem;
@@ -67,19 +65,17 @@ body{
 
 .span-2{
     grid-column: span 2; /*  so this element span to (expand to) two elements "it takes two elements"   */
-   
 }
 
 .calc-grid > button{
     cursor: pointer;
-    border: none;
+    border: 1px solid white;
     font-size: 1em;
     background-color: var(--main-buttons-background);
-   /* background-color: var(--alt-buttons-background);*/
-  
+   /* background-color: var(--alt-buttons-background);*/ 
 }
+
 .calc-grid > button:hover{
    background-color: var(--main-buttons-hover);
-  /* background-color: var(--alt-buttons-hover);*/
-  
+  /* background-color: var(--alt-buttons-hover);*/  
 }
