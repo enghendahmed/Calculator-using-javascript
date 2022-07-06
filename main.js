@@ -47,6 +47,15 @@ class Calculator {
         if (number === '.' && this.currentOperand.includes('.')) {
             return;
         } 
+        
+          /*to clear the Result on the screen so when user press a number it does not write beside the result but delete the result first 
+        then write the new number to make new caculation */
+        if(this.previousOperand == '' && this.currentOperand == this.computation && this.operation == undefined ){
+            console.log('delete the result Once the user press number for a new calculation');
+            this.clear();
+            this.updateDisplay();
+        }
+        
         this.currentOperand = this.currentOperand.toString() + number.toString();                   
     }
 
@@ -77,33 +86,33 @@ class Calculator {
 
     //
     compute() {
-        let computation;
+        
         const previous = parseFloat(this.previousOperand);
         const current = parseFloat(this.currentOperand);
         if(isNaN(previous) || isNaN(current)) { return; } 
         
         switch(this.operation) {
             case '+':
-                computation = previous + current;
+                this.computation = previous + current;
                 break;
             
             case '-':
-                computation = previous - current;
+                this.computation = previous - current;
                 break;
 
             case '*':
-                computation = previous * current;
+                this.computation = previous * current;
                 break;
 
             case '/':
-                computation = previous / current;
+                this.computation = previous / current;
                 break;
 
             default:
                 return;
         }
 
-        this.currentOperand = computation;
+        this.currentOperand = this.computation;
         this.operation = undefined;
         this.previousOperand = '';
 
