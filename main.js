@@ -118,6 +118,19 @@ class Calculator {
 
     }
 
+    // define updateDisplay() function
+     updateDisplay() {
+        this.currentOperandTextElement.innerText = this.currentOperand;
+        if (this.operation != null) {
+          this.previousOperandTextElement.innerText = this.previousOperand + this.operation;
+        } else {
+          this.previousOperandTextElement.innerText = '';
+        }
+    }
+
+
+    /* this part of code in case we want to separate the parts of the large numbers by coma "," like this 234,567,78
+
     getDisplayNumber(number) {
         const stringNumber = number.toString();
         const integerDigits = parseFloat(stringNumber.split('.')[0]);
@@ -138,17 +151,20 @@ class Calculator {
     
       // define updateDisplay() function
       updateDisplay() {
-        this.currentOperandTextElement.innerText =
-          this.getDisplayNumber(this.currentOperand);
+        this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
         if (this.operation != null) {
-          this.previousOperandTextElement.innerText =
-            `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
+          this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
         } else {
           this.previousOperandTextElement.innerText = '';
         }
-      }
-    
+    }
+
+    */
+
 }
+
+/********************************** The End of The Constructor *************************/
+
 
 // select (Get) all HTML elements that we will need (all Buttons and output elements)
 const operationButtons = document.querySelectorAll('[data-operation]');
